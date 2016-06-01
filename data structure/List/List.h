@@ -13,6 +13,7 @@ public:
 	void print();
 	void pop_front();
 	void pop_back();
+	int getSize();
 	T front();
 	T back();
 
@@ -94,6 +95,11 @@ inline void List<T>::pop_back() {
 	this->tail->m_rlink = reinterpret_cast<Node<T>*>(&this->tail);
 	--this->size;
 	delete temp;
+}
+
+template<typename T>
+inline int List<T>::getSize() {
+	return this->size;
 }
 
 template<typename T>
