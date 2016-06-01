@@ -1,5 +1,6 @@
 #include "Node.h"
 #include <iostream>
+#include <cstdio>
 #ifndef __LIST__
 #define __LIST__
 
@@ -63,6 +64,8 @@ inline void List<T>::push_back(T value) {
 
 template<typename T>
 inline void List<T>::print() {
+	if (!this->size)
+		throw "out of range";
 	Node<T> * ptr = this->head;
 	Node<T> * end = reinterpret_cast<Node<T>*>(&this->tail);
 	for (; ptr != end; ptr = ptr->m_rlink) {
@@ -75,7 +78,11 @@ template<typename T>
 inline void List<T>::pop_front() {
 	if (!this->size)
 		throw "range error";
-
+	if (this->size == 1) {
+		delete this->head;
+		--this->size;
+		return;
+	}
 
 	Node<T> * temp = this->head;
 	this->head = temp->m_rlink;
@@ -89,7 +96,12 @@ template<typename T>
 inline void List<T>::pop_back() {
 	if (!this->size)
 		throw "range error";
-
+	if (this->size == 1) {
+		delete this->head;
+		--this->size;
+		return;
+	}
+		
 	Node<T> * temp = this->tail;
 	this->tail = temp->m_llink;
 	this->tail->m_rlink = reinterpret_cast<Node<T>*>(&this->tail);
