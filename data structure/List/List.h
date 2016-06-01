@@ -67,8 +67,7 @@ inline void List<T>::print() {
 	if (!this->size)
 		throw "out of range";
 	Node<T> * ptr = this->head;
-	Node<T> * end = reinterpret_cast<Node<T>*>(&this->tail);
-	for (; ptr != end; ptr = ptr->m_rlink) {
+	for (int i = 0;i< this->size ; ptr = ptr->m_rlink,i++) {
 		std::cout << ptr->m_value;
 		std::cout << " ";
 	}
@@ -78,15 +77,15 @@ template<typename T>
 inline void List<T>::pop_front() {
 	if (!this->size)
 		throw "range error";
-	if (this->size == 1) {
-		delete this->head;
+	if (head->m_rlink == nullptr) {
+		delete temp;
 		--this->size;
 		return;
 	}
 
 	Node<T> * temp = this->head;
 	this->head = temp->m_rlink;
-	this->head->m_llink = reinterpret_cast<Node<T>*>(&this->head);
+	this->head->m_llink = nullptr;
 	--this->size;
 	delete temp;
 
@@ -96,15 +95,15 @@ template<typename T>
 inline void List<T>::pop_back() {
 	if (!this->size)
 		throw "range error";
-	if (this->size == 1) {
-		delete this->head;
+	if (tail->m_llink == nullptr) {
+		delete tail;
 		--this->size;
 		return;
 	}
 		
 	Node<T> * temp = this->tail;
 	this->tail = temp->m_llink;
-	this->tail->m_rlink = reinterpret_cast<Node<T>*>(&this->tail);
+	this->tail->m_rlink = NULL;
 	--this->size;
 	delete temp;
 }
@@ -136,8 +135,8 @@ inline Node<T>* List<T>::newNode(T value) {
 	if (!ptr)
 		throw "Out of memory";
 	ptr->m_value = value;
-	ptr->m_llink = reinterpret_cast<Node<T>*>(&this->head);
-	ptr->m_rlink = reinterpret_cast<Node<T>*>(&this->tail);
+	ptr->m_llink = nullptr;
+	ptr->m_rlink = nullptr;
 
 	return ptr;
 }
