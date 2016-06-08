@@ -1,0 +1,30 @@
+set ignorecase
+set nocompatible
+set cindent
+set ruler
+set number
+set hlsearch
+set incsearch
+set nu
+set tabstop=8
+set softtabstop=2
+set shiftwidth=2
+set smarttab
+set expandtab
+set smartcase
+set shiftround
+set helplang=ko
+set expandtab
+set fileencodings=ucs-bom,utf-8,default,euc-kr,latin1
+set guifont=Bitstream\ Vera\ Sans\ Mono\ 9
+set def=^\\s*#\\s*define
+set inc=^\\s*#\\s*include
+set scr=10
+set nowrap
+set cursorline
+set nf=octal,hex
+set cindent
+set fen
+set foldlevel=2
+set hls
+set list listchars=tab:»›,trail:· 
