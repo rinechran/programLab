@@ -1,0 +1,14 @@
+#include <iostream>                                                             
+
+using namespace std;
+class AAA{
+  public:
+  ~AAA(){}
+  int a;
+};
+int main(){
+  AAA * ptr = new AAA[10];
+
+  cout<<"ptr size : "<<*(int*)((char*)ptr-4) <<endl;;
+
+}
