@@ -24,4 +24,5 @@ void find_pattern(char *arr, char *pat) {
             j = pi[j];
         }
     }
+    
 }
