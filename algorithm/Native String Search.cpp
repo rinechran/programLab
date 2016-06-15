@@ -1,6 +1,23 @@
 #include <stdio.h>
 #include <string.h>
+/*
+#include <iostream>
+#include <string>
 
+using namespace std;
+  string str ="a h ello hello hello asdasd";
+  string pattern = "hello";
+
+  size_t found = 0;
+  while(true){
+    found = str.find(pattern,found);
+    if(found==string::npos)
+      break;
+    cout<<found++<<endl;                                                       
+  }
+
+}
+*/
 
 void findPattern(const char * str ,const char * pattern){
   int strLength =  strlen(str);
