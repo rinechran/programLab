@@ -1,11 +1,3 @@
-#include <opencv/cv.hpp>
-#include <opencv/highgui.h>
-#include <iostream>
-using namespace cv;
-using namespace std;
-
-
-
 //example imageVlaue(image, Matcopy, [](const uchar &input) {return input*1.7;});
 template <typename T>
 void imageVlaue(const Mat &input, Mat  &ouput, T fn) {
@@ -32,6 +24,20 @@ Mat imageCompose(const Mat &obj, Mat&obj2) {
 		for (int j = 0;j < result.rows;j++) {
 			uchar val = saturate_cast<uchar>(obj.at<uchar>(i, j) + obj2.at<uchar>(i, j));
 			result.at<uchar>(i, j) = val;
+		}
+	}
+	return result;
+
+}
+Mat imageDiff(const Mat &obj, Mat&obj2) {
+	Mat result;
+	result.create(obj.rows, obj.cols, obj.type());
+
+
+	for (int i = 0;i < result.rows;i++) {
+		for (int j = 0;j < result.rows;j++) {
+			uchar val = saturate_cast<uchar>(obj.at<uchar>(i, j) - obj2.at<uchar>(i, j));
+			result.at<uchar>(i, j) = abs(val);
 		}
 	}
 	return result;
