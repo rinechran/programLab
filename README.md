@@ -1,4 +1,10 @@
-# Cpp-Study
+# program center
 
+## 프로그램 스터디 관련..github입니다.
 
-cpp-study
+* C#
+
+* C++
+
+* Python
+
