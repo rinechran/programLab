@@ -58,11 +58,17 @@ public:
 
 };
 
+
+
 int main() {
-	Widget * widget = new BorderDecorator(new TextField(10, 20));
-
-	widget->draw();
-
-	delete widget;
+	Widget * widget1 = new ScroolDecorator(
+						new ScroolDecorator
+						(new ScroolDecorator(
+							new BorderDecorator(
+								new TextField(10, 20)))));
+	Widget * widget2 = new BorderDecorator(new TextField(10, 20));
+	widget1->draw();
+	widget2->draw();
+	delete widget1;
 
 }
