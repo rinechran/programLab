@@ -42,10 +42,9 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'The-NERD-tree'
 Plugin 'tpope/vim-fugitive'
 Plugin 'git://git.wincent.com/command-t.git'
-Plugin 'gmarik/Vundle.vim'
-Plugin 'altercation/vim-colors-solarized'  
-Plugin 'kien/ctrlp.vim'  
-Plugin 'scrooloose/syntastic'  
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'kien/ctrlp.vim'
+Plugin 'scrooloose/syntastic'
 Plugin 'Valloric/YouCompleteMe'
 
 call vundle#end()            " required
