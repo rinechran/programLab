@@ -1,5 +1,7 @@
-nmap <F7> :NERDTree<CR>
+let g:neocomplcache_enable_at_startup = 1
 
+nmap <F7> :NERDTree<CR>
+nmap <F8> :TlistToggle<CR>
 
 filetype off                  " required
 syntax on
@@ -37,6 +39,8 @@ set list listchars=tab:»›,trail:·
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
+
+Plugin 'neocomplcache'
 Plugin 'Shougo/neocomplcache.vim'
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'The-NERD-tree'
@@ -45,6 +49,8 @@ Plugin 'git://git.wincent.com/command-t.git'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/syntastic'
+Plugin 'taglist.vim'
+Plugin 'snipMate'
 
 
 call vundle#end()            " required
