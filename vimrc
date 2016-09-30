@@ -37,7 +37,7 @@ set list listchars=tab:»›,trail:·
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-
+Plugin 'Shougo/neocomplcache.vim'
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'The-NERD-tree'
 Plugin 'tpope/vim-fugitive'
@@ -45,7 +45,7 @@ Plugin 'git://git.wincent.com/command-t.git'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/syntastic'
-Plugin 'Valloric/YouCompleteMe'
+
 
 call vundle#end()            " required
 filetype plugin indent on    " required
