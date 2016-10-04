@@ -1,4 +1,3 @@
-let g:neocomplcache_enable_at_startup = 1
 
 nmap <F7> :NERDTree<CR>
 nmap <F8> :TlistToggle<CR>
@@ -40,8 +39,7 @@ set list listchars=tab:»›,trail:·
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-Plugin 'neocomplcache'
-Plugin 'Shougo/neocomplcache.vim'
+
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'The-NERD-tree'
 Plugin 'tpope/vim-fugitive'
@@ -51,7 +49,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'taglist.vim'
 Plugin 'snipMate'
-
+Plugin 'Valloric/YouCompleteMe'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
