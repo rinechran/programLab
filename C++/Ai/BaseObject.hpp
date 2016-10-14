@@ -8,6 +8,8 @@
 
 #ifndef BaseObject_hpp
 #define BaseObject_hpp
+#include "State.hpp"
+
 
 class BaseObject{
 public:
@@ -17,6 +19,7 @@ public:
     virtual ~BaseObject() = 0;
 protected:
     int mUid;
+    StateMachine stateMachine;
     static int mObjectCount;
     
 };
