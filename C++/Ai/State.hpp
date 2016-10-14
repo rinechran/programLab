@@ -8,19 +8,20 @@
 
 #ifndef State_hpp
 #define State_hpp
-
-
+#include <random>
+#include <iostream>
 class State{
 public:
     virtual void excute() = 0;
 };
 
-class MinerBag : State{
+class MinerGoldPull : State{
 public:
-    MinerBag();
-    
+    MinerGoldPull(){};
     virtual void excute(){
-        
+        std::mt19937 mt;
+        std::uniform_int_distribution<int> a(0,3);
+
     }
 };
 

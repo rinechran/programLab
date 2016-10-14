@@ -10,14 +10,19 @@
 #define Npc_hpp
 #include "Character.hpp"
 #include <iostream>
+#include "SingleTon.hpp"
+
 
 class Miner : BaseObject{
+private:
+    int mGold;
 public:
+    
     Miner() : BaseObject(){
         std::cout<<"Miner :"<< this->getUid()<<std::endl;
     }
     void update(){
-        this->stateMachine.excute();
+
     }
     
 };
