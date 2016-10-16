@@ -6,30 +6,23 @@
 //  Copyright © 2016년 Eun Sik Jung. All rights reserved.
 //
 #include <iostream>
+#include "BaseObject.hpp"
+#include "State.hpp"
+
 #ifndef Character_hpp
 #define Character_hpp
 
 
-class BaseObject{
-public:
-    BaseObject() : uId(TotalUid++){
-    }
-    
-    int getUid(){
-        return this->uId;
-    }
-    
-    virtual ~BaseObject(){};
-    
-private:
-    const uint uId;
+class TomInHouse;
+class JerryInHouse;
 
-    static uint TotalUid;
+
+template <typename T>
+class AiObject : public BaseObject{
+protected:
+    AiObject() = default;
     
 };
-
-
-
 class Tom : public BaseObject{
 public:
     Tom() : BaseObject(){
@@ -38,7 +31,12 @@ public:
     ~Tom(){
         std::cout<<"Tom Die"<<std::endl;;
     }
+    void update(){
+        
+    }
+  private:
     
+
 };
 
 
@@ -47,6 +45,38 @@ public:
     Jerry() : BaseObject(){
         std::cout<<"Jerry Tom : " << this->getUid() <<std::endl;
     }
+    void update(){
+        
+    }
+    
+
+};
+
+
+class TomInHouse : public State<Tom> {
+public:
+    TomInHouse() : State<Tom>() {
+        
+    }
+    virtual void excute(Tom * /* obj */){
+        location = Location::TomHouse;
+      //  std::cout<<"Tom Location : " << getLocationString(location)<<std::endl;
+    }
+    
+    
+};
+
+
+class JerryInHouse : public State<Jerry>{
+public:
+    JerryInHouse() : State<Jerry>() {
+        
+    }
+    virtual void excute(Tom * /* obj */){
+        
+    }
+    
+    
 };
 
 

@@ -6,45 +6,30 @@
 //  Copyright © 2016년 Eun Sik Jung. All rights reserved.
 //
 
+#include <stdio.h>
+#include <string>
+#include "Location.h"
+
 #ifndef State_hpp
 #define State_hpp
 
-#include <stdio.h>
-#include "Character.hpp"
+
+
 
 template <typename T>
 class State{
-    virtual void excute(T * /* obj */){
-        
-    }
+    
 public:
+    State(){
+    }
+    virtual void excute(T * /* obj */) =0;
+    Location location;
     
 };
-
-class TomInHouse : State<Tom>{
-    virtual void excute(Tom * /* obj */){
-        
-    }
-public:
-    
-};
-
-
-class JerryInHouse : State<Jerry>{
-    virtual void excute(Tom * /* obj */){
-        
-    }
-public:
-    
-};
-
 
 template <typename T>
 class StateMachine{
-    
-    State<T> * pCurrentState;
-    State<T> * pBeforeState;
-    
+public:
     StateMachine(){
         pCurrentState = nullptr;
         pBeforeState = nullptr;
@@ -57,6 +42,10 @@ class StateMachine{
         pBeforeState = pCurrentState;
         pCurrentState = obj;
     }
+private:
+    State<T> * pCurrentState;
+    State<T> * pBeforeState;
+    
     
 };
 

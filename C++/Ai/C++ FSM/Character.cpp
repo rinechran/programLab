@@ -7,4 +7,4 @@
 //
 
 #include "Character.hpp"
-uint BaseObject::TotalUid = 0;
+
