@@ -38,7 +38,7 @@ public:
     void excute(){
         this->pCurrentState->excute();
     }
-    void changeState(T * obj){
+    void changeState(State<T> * obj){
         pBeforeState = pCurrentState;
         pCurrentState = obj;
     }

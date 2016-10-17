@@ -13,16 +13,18 @@
 #define Character_hpp
 
 
-class TomInHouse;
-class JerryInHouse;
+
+
+
 
 
 template <typename T>
 class AiObject : public BaseObject{
-protected:
+public:
     AiObject() = default;
-    
-    StateMachine<T> *stateMachine;
+protected:
+    StateMachine<T>  stateMachine;
+    Location location;
 };
 
 
@@ -56,6 +58,7 @@ public:
 };
 
 
+
 class TomInHouse : public State<Tom> {
 public:
     TomInHouse() : State<Tom>() {
@@ -63,7 +66,8 @@ public:
     }
     virtual void excute(Tom * /* obj */){
         location = Location::TomHouse;
-      //  std::cout<<"Tom Location : " << getLocationString(location)<<std::endl;
+        std::cout<<"Tom house"<<std::endl;
+        //  std::cout<<"Tom Location : " << getLocationString(location)<<std::endl;
     }
     
     
@@ -75,13 +79,12 @@ public:
     JerryInHouse() : State<Jerry>() {
         
     }
-    virtual void excute(Tom * /* obj */){
+    virtual void excute(Jerry * /* obj */){
         
     }
     
     
 };
-
 
 
 #endif /* Character_hpp */

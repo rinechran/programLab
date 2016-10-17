@@ -29,8 +29,12 @@ int main(int argc, const char * argv[]) {
     EntryManage entryManage;
     entryManage.newEntryObject(new Tom);
     entryManage.newEntryObject(new Jerry);
-    entryManage.update();
+   
     //
+    
+    for(int i=0;i<10;i++){
+        entryManage.update();
+    }
     entryManage.entryEarse(0);
     
     return 0;
