@@ -22,10 +22,13 @@ class AiObject : public BaseObject{
 protected:
     AiObject() = default;
     
+    StateMachine<T> *stateMachine;
 };
-class Tom : public BaseObject{
+
+
+class Tom : public AiObject<Tom>{
 public:
-    Tom() : BaseObject(){
+    Tom() : AiObject<Tom>(){
         std::cout<<"hello Tom : " << this->getUid() <<std::endl;
     }
     ~Tom(){
@@ -40,9 +43,9 @@ public:
 };
 
 
-class Jerry : public BaseObject{
+class Jerry : public AiObject<Jerry>{
 public:
-    Jerry() : BaseObject(){
+    Jerry() : AiObject<Jerry>(){
         std::cout<<"Jerry Tom : " << this->getUid() <<std::endl;
     }
     void update(){
