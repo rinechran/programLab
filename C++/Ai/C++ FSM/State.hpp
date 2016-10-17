@@ -8,7 +8,7 @@
 
 #include <stdio.h>
 #include <string>
-#include "Location.h"
+#include "Location.hpp"
 
 #ifndef State_hpp
 #define State_hpp

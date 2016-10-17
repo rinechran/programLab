@@ -7,3 +7,8 @@
 //
 
 #include "EntryManage.hpp"
+
+//template <typename T>
+//void EntryManage::newEntryObject(T * obj){
+//    arrObj.push_back(obj);
+//}
