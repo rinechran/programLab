@@ -8,3 +8,9 @@
 
 #include "BaseObject.hpp"
 unsigned BaseObject::TotalUid = 0;
+
+int BaseObject::getUid(){
+    return this->uId;
+}
+BaseObject::BaseObject(): uId(TotalUid++){
+}

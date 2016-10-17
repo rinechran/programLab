@@ -9,6 +9,26 @@
 #ifndef SingTon_hpp
 #define SingTon_hpp
 
-#include <stdio.h>
+#include <mutex>
+template <typename T>
+class SingTon{
+public:
+    SingTon(){
+        _obj = nullptr;
+        
+    }
+    static T* getInstance (){
+        sMutex.lock();
+        if(_obj==nullptr)
+            _obj = new T;
+        sMutex.unlock();
+        return _obj;
+        
+    }
+    
+private:
+    static T * _obj;
+    static std::mutex sMutex;
+};
 
 #endif /* SingTon_hpp */

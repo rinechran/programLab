@@ -7,7 +7,7 @@
 //
 
 #include "Location.hpp"
-std::string getLocationString(Location &obj){
+std::string to_string(Location &obj){
         switch(obj){
             case Location::kitchen:
                 return "kitchen";

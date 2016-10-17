@@ -14,12 +14,8 @@
 
 class BaseObject{
 public:
-    BaseObject() : uId(TotalUid++)  {
-    }
-    
-    int getUid(){
-        return this->uId;
-    }
+    BaseObject() ;
+    int getUid();
     virtual void update() = 0;
     virtual ~BaseObject(){};
     
@@ -29,6 +25,7 @@ private:
     
     
 };
+
 
 
 #endif /* BaseObject_hpp */

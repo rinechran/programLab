@@ -13,6 +13,6 @@ enum class Location{
     kitchen,hall,TomHouse,JerryHouse
 };
 //
-std::string getLocationString(Location &obj);
+std::string to_string(Location &obj);
 
 #endif /* Location_hpp */

@@ -18,30 +18,18 @@
 
 template <typename T>
 class State{
-    
 public:
-    State(){
-    }
+    State() = default;
     virtual void excute(T * /* obj */) =0;
     Location location;
-    
 };
 
 template <typename T>
 class StateMachine{
 public:
-    StateMachine(){
-        pCurrentState = nullptr;
-        pBeforeState = nullptr;
-        
-    }
-    void excute(){
-        this->pCurrentState->excute();
-    }
-    void changeState(State<T> * obj){
-        pBeforeState = pCurrentState;
-        pCurrentState = obj;
-    }
+    StateMachine();
+    void excute();
+    void changeState(State<T> * obj);
 private:
     State<T> * pCurrentState;
     State<T> * pBeforeState;
@@ -49,5 +37,20 @@ private:
     
 };
 
+
+template <typename T>
+StateMachine<T>::StateMachine(){
+    pCurrentState = nullptr;
+    pBeforeState = nullptr;
+}
+template <typename T>
+void StateMachine<T>::excute(){
+    this->pCurrentState->excute();
+}
+template <typename T>
+void StateMachine<T>::changeState(State<T> * obj){
+    pBeforeState = pCurrentState;
+    pCurrentState = obj;
+}
 
 #endif /* State_hpp */

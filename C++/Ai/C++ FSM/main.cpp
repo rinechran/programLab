@@ -29,7 +29,19 @@ int main(int argc, const char * argv[]) {
     EntryManage entryManage;
     entryManage.newEntryObject(new Tom);
     entryManage.newEntryObject(new Jerry);
-   
+    entryManage.newEntryObject(new Jerry);
+    entryManage.newEntryObject(new Jerry);
+    entryManage.newEntryObject(new Jerry);
+    entryManage.newEntryObject(new Jerry);
+    entryManage.newEntryObject(new Jerry);
+    entryManage.newEntryObject(new Jerry);
+    entryManage.newEntryObject(new Jerry);
+    entryManage.newEntryObject(new Jerry);
+    entryManage.newEntryObject(new Jerry);
+    entryManage.newEntryObject(new Tom);
+    entryManage.newEntryObject(new Tom);
+    entryManage.newEntryObject(new Tom);
+    //new  TomInHouse();
     //
     
     for(int i=0;i<10;i++){
