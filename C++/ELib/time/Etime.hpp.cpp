@@ -7,11 +7,10 @@ namespace Eun {
 
 
 	template <class TIME_TYPE, /*std::chrono::milliseconds */
-		class KIND_TYPE = std::chrono::steady_clock,
-		class TIMEPOINT = KIND_TYPE::time_point>
+		class KIND_TYPE = std::chrono::steady_clock>
 
 		class Etime {
-
+			using TIMEPOINT = typename KIND_TYPE::time_point;
 		public:
 			Etime() {
 				this->ok = false;
@@ -51,4 +50,10 @@ namespace Eun {
 			TIMEPOINT start, end;
 	};
 
+}
+
+int main() {
+	using namespace Eun;
+	Etime<std::chrono::milliseconds> a;
+	a.timeStart();
 }
