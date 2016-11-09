@@ -27,4 +27,24 @@ namespace Eun {
 		CPoint * pPoint;
 
 	};
+
+	class RGB {
+	public:
+		using RGBCOLOR = int;
+
+		RGBCOLOR setColor(int r, int g, int b) {
+			rgb = static_cast<RGBCOLOR>(RGB(r, g, b));
+			return rgb;
+		}
+
+		template <typename T>
+		constexpr RGBCOLOR setColor(T&& point) {
+			rgb = point;
+			return rgb;
+		}
+
+	private:
+		RGBCOLOR rgb;
+
+	};
 }
