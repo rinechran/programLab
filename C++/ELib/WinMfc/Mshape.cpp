@@ -4,7 +4,7 @@
 
 //add Me
 
-void Eun::ERect::mouseButtonDown(CPoint & point) {
+void EunMfc::ERect::mouseButtonDown(CPoint & point) {
 	if (this->PtInRect(point)) {
 		mMouseCheck = true;
 		pPoint = new CPoint();
@@ -12,11 +12,11 @@ void Eun::ERect::mouseButtonDown(CPoint & point) {
 	}
 }
 
-void Eun::ERect::mouseButtonUp(CPoint & point) {
+void EunMfc::ERect::mouseButtonUp(CPoint & point) {
 	mMouseCheck = false;
 }
 
-void Eun::ERect::mouseMove(CPoint & point) {
+void EunMfc::ERect::mouseMove(CPoint & point) {
 	if (mMouseCheck == true)
 		MoveToXY(static_cast<CPoint>(point - *pPoint));
 }

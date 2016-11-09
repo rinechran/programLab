@@ -1,7 +1,7 @@
 #include "stdafx.h"
-
 #include <sac.h>
-namespace Eun {
+
+namespace EunMfc {
 	class ERect : public CRect {
 	public:
 		//Constructors
