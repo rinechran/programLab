@@ -22,6 +22,18 @@ namespace EunMfc {
 		void mouseButtonDown(CPoint &point);
 		void mouseButtonUp(CPoint &point);
 		void mouseMove(CPoint &point);
+
+		//public template
+		template <typename FN, typename ...ARGS>
+		void mouseMove(CPoint &point, FN & fn, ARGS && ...args) {
+			if (this->PtInRect(point) & fn(args...)) {
+				mMouseCheck = true;
+				pPoint = new CPoint();
+				*pPoint = point - this->TopLeft();
+			}
+		}
+
+
 	private:
 		bool mMouseCheck;
 		CPoint * pPoint;
@@ -38,7 +50,7 @@ namespace EunMfc {
 		}
 
 		template <typename T>
-		constexpr RGBCOLOR setColor(T&& point) {
+		RGBCOLOR setColor(T&& point) {
 			rgb = point;
 			return rgb;
 		}
