@@ -1,28 +1,28 @@
+#pragma once
+
 #include <iostream>
 #include <chrono>
 #include <thread>
 
 
 namespace Eun {
-
-
 	template <class TIME_TYPE, /*std::chrono::milliseconds */
 		class KIND_TYPE = std::chrono::steady_clock>
 
-		class Etime {
+		class StopWatch {
 		using TIMEPOINT = typename KIND_TYPE::time_point;
 		public:
-			Etime() {
+			StopWatch() {
 				this->ok = false;
 			}
 
-			void timeStart() {
+			void start() {
 				this->ok = false;
 				this->start = KIND_TYPE::now();
 
 			}
 
-			void timeEnd() {
+			void end() {
 				this->ok = true;
 				this->end = KIND_TYPE::now();
 			}
@@ -30,18 +30,9 @@ namespace Eun {
 			bool ready() {
 				return this->ok;
 			}
-
-			void reStart() {
-				this->ok = false;
-				this->start = KIND_TYPE::now();
-
-			}
-
-
 			TIME_TYPE getInterval() {
 				if (!this->ok)
 					throw std::logic_error("Not Ready");
-
 				return std::chrono::duration_cast<TIME_TYPE>(this->end - this->start);
 			}
 			//only  std::chrono::system_clock
