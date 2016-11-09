@@ -18,13 +18,13 @@ namespace Eun {
 
 			void start() {
 				this->ok = false;
-				this->start = KIND_TYPE::now();
+				this->mStart = KIND_TYPE::now();
 
 			}
 
 			void end() {
 				this->ok = true;
-				this->end = KIND_TYPE::now();
+				this->mEnd = KIND_TYPE::now();
 			}
 
 			bool ready() {
@@ -33,18 +33,18 @@ namespace Eun {
 			TIME_TYPE getInterval() {
 				if (!this->ok)
 					throw std::logic_error("Not Ready");
-				return std::chrono::duration_cast<TIME_TYPE>(this->end - this->start);
+				return std::chrono::duration_cast<TIME_TYPE>(this->mEnd - this->mStart);
 			}
 			//only  std::chrono::system_clock
 
 			time_t getTime_t() {
-				TIMEPOINT obj = getInterval() + this->start;
+				TIMEPOINT obj = getInterval() + this->mStart;
 				return std::chrono::system_clock::to_time_t(obj);
 			}
 
 		private:
 			bool ok;
-			TIMEPOINT start, end;
+			TIMEPOINT mStart, mEnd;
 	};
 
 }
