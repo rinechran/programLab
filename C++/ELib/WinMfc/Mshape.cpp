@@ -13,7 +13,11 @@ void EunMfc::ERect::mouseButtonDown(CPoint & point) {
 }
 
 void EunMfc::ERect::mouseButtonUp(CPoint & point) {
-	mMouseCheck = false;
+	if (mMouseCheck == true) {
+		mMouseCheck = false;
+		delete pPoint;
+	}
+
 }
 
 void EunMfc::ERect::mouseMove(CPoint & point) {

@@ -33,6 +33,7 @@ namespace EunMfc {
 			}
 		}
 
+		
 
 	private:
 		bool mMouseCheck;
