@@ -1,10 +1,15 @@
 # program center
 
-## 프로그램 스터디 관련..github입니다.
+## It is my own study purpose store
 
-* C#
+## language Used : C++ , C# , Python
 
-* C++
 
-* Python
 
+# Contents
+
+## Design pattern
+## Personal Library (Opencv,Network,Web)
+
+
+![photo](https://github.com/rinechran/programLab/blob/master/Img/musicPlayer1.JPG)
