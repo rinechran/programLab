@@ -4,7 +4,7 @@
 
 namespace Eun {
 	template <typename T>
-	std::basic_string<T> ReplaceAll(std::basic_string<T>&str, const std::basic_string<T>&& from, const std::basic_string<T>&& to) {
+	T ReplaceAll(T str,const T && from,const T && to) {
 		int startPos = 0;
 		while ((startPos = str.find(from, startPos)) != std::string::npos) {
 			str.replace(startPos, from.length(), to);
@@ -12,5 +12,17 @@ namespace Eun {
 		}
 		return str;
 	}
-}
+	template <typename T>
+	T ltrim(T && str) {
+		return str.erase(0, str.find_first_not_of(" "));
+	}
+	template <typename T>
+	T rtrim(T && str) {
+		return str.erase(str.find_last_not_of(" ") + 1, str.length());
+	}
+	template <typename T>
+	T trim(T&&str) {
+		return ltrim(rtrim(str));
+	}
 
+}
