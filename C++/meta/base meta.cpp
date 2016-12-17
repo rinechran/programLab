@@ -26,3 +26,18 @@ struct is_void : is_same<typename remove_const<T>::Type, void> {};
 template <typename T>
 struct is_null_pointer : is_same<typename remove_const<T>::Type, std::nullptr_t> {};
 
+template <typename T>
+struct is_pointer_base : false_type {};
+template <typename T>
+struct is_pointer_base<T*> : true_type {};
+
+template <typename T>
+struct is_pointer : is_pointer_base<typename remove_const<T>::type> {};
+
+
+template <typename T>
+struct is_reference : false_type {};
+template <typename T>
+struct is_reference<T&> : true_type {};
+template <typename T>
+struct is_reference<T&&> : true_type {};
