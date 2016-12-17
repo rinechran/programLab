@@ -1,8 +1,8 @@
 template <class _Ty>
-struct is_int { enum _valuelue { value = false }; };
+struct is_int { enum { value = false }; };
 
 template <>
-struct is_int<int> { int a; enum _valuelue { value = true }; };
+struct is_int<int> { enum { value = true }; };
 
 
 struct true_type { enum _value_ { value = true }; };
