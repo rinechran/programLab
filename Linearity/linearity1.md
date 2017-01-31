@@ -51,16 +51,28 @@
 
 이미지 출처 : http://mrw0119.tistory.com/10
 
-S = {v1,v2,v3,v4 ...} 가 있을떄 이들의 선형조합을 다음과 같이 나타낼수 있다.
+벡터의 덧셈은 두 벡터가 각각 v = ( Vx , Vy ,Vz ) w = ( Wx , Wy ,Wz )라면
 
-V = s1 * v1 + s2 * v2...
+v + w = ( Vx + Wx , Vy + Wy , Vz + Wz )이다.
 
-선형 조합이란 집합 각각의 스칼라 값을 모든 곱한 후 모두 더한것을 말한다.
+각각의 x y z 성분을 더한값이 바로 새로운 벡터가 만들어진다 
 
+스칼라 곱도 매우 직관적이다 
 
+s * v = ( s * Vx , s * Vy , S * Vz)
 
+벡터의 크기는 어떻게 구할까? 
 
+쉽게 생각하여 원점에서부터 (Vx ,Vy, Vz)까지의 길이가 바로 크기가 된다.
 
+피타고라스 정리를 생각하면 매우 간단하다.
+
+![벡터 크기](https://github.com/rinechran/programLab/blob/master/Linearity/img/linearity5.png)
+
+또한 벡터를 단위 벡터로 만들고싶다면 각 성분을 벡터의 길이로 나누면 된다. 
+이러한 과정을 정규화(normalize)이라고 한다.
+
+![벡터 정규화](https://github.com/rinechran/programLab/blob/master/Linearity/img/linearity6.png)
 
 
 
