@@ -75,8 +75,37 @@ s * v = ( s * Vx , s * Vy , S * Vz)
 ![벡터 정규화](https://github.com/rinechran/programLab/blob/master/Linearity/img/linearity6.png)
 
 
+## 벡터의 내적과 외적
 
+내적은 공식은 아래와 같다.
 
+벡터의 내적이란 두개의 벡터를 가지구 한 스칼라를 구하는 연산으로 아래와 같이 정의된다.
+
+![벡터의 내적](https://github.com/rinechran/programLab/blob/master/Linearity/img/linearity7.png)
+
+이미지 출처 : http://j1w2k3.tistory.com/627
+
+실제 게임에서는 v = ( Vx , Vy ,Vz ) w = ( Wx , Wy ,Wz ) 이면 
+
+v * w = Vx * Wx + Vy * + Wy ....
+
+간단하게 각 성분을 곱하고 더하면 그만이다.
+
+게임에서는 이러한 공식을 이용해 두 벡터의 사이각을 구한다.
+
+또한 벡터의 제곱근을 구하는 것이 느리기떄문에 그 자신과 내적시키는 경우를 볼수있다.
+
+실제 게임에서는 상대방이 주인공 앞에 있는지를 확인할수있다.
+
+아래 그래프는 Cos ,Sin 그래프이다. 
+
+![벡터 내적 ](https://github.com/rinechran/programLab/blob/master/Linearity/img/linearityTangentFunction.png)
+
+중요할점은 0 ~ 90 , 270 ~ 360 향상 양이기떄문에 적이 뒤에 있는지 앞에 있는지 확인할수있다는 점이다.
+
+만약 둘다 단위 벡터라면 두 벡터가 평행인지 확인할수 있다.
+
+그치만 단위벡터로 내적하게 될경우  (3번 곱 , 2번의 덧셈 , 1번 제곱근) 으로 쓰기떄문에 외적을 사용한다.
 
 
 
