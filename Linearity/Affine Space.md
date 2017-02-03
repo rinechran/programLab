@@ -17,7 +17,7 @@
 
 정의를 버려두고 터와 뎃셈 연산에 대해 보자
 
-![아핀공간 점덧셈 ](https://github.com/rinechran/programLab/blob/master/Linearity/img/ApointAddvector.png)
+![아핀공간 점덧셈 ](https://github.com/rinechran/programLab/blob/master/Linearity/img/pointAddvector.png)
 
 점 O를 벡터 V를 이용헤서 점P로 이동시킨것과 같다.
 
