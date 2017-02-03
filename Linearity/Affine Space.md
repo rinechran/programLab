@@ -9,7 +9,7 @@
 
 이 점을 존재하는 공간을 아핀 공간이라고 하며 흔히들 유클리드 공간을 벡터라고 하지만 아핀공간(Affine Space) 이다.
 
-![아핀공간 점 ](https://github.com/rinechran/programLab/blob/master/Linearity/img/AffineSpacePoint.png)
+![아핀공간 점](https://github.com/rinechran/programLab/blob/master/Linearity/img/AffineSpacePoint.png)
 
 출처 : 위키백과
 
@@ -17,7 +17,7 @@
 
 정의를 버려두고 터와 뎃셈 연산에 대해 보자
 
-![아핀공간 점 ](https://github.com/rinechran/programLab/blob/master/Linearity/img/ApointAddvector.png)
+![아핀공간 점덧셈 ](https://github.com/rinechran/programLab/blob/master/Linearity/img/ApointAddvector.png)
 
 점 O를 벡터 V를 이용헤서 점P로 이동시킨것과 같다.
 
