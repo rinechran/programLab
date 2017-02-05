@@ -77,6 +77,7 @@ s * v = ( s * Vx , s * Vy , S * Vz)
 
 ## 벡터의 내적과 외적
 
+### 내적 
 내적은 공식은 아래와 같다.
 
 벡터의 내적이란 두개의 벡터를 가지구 한 스칼라를 구하는 연산으로 아래와 같이 정의된다.
@@ -108,6 +109,58 @@ v * w = Vx * Wx + Vy * + Wy ....
 그치만 단위벡터로 내적하게 될경우  (3번 곱 , 2번의 덧셈 , 1번 제곱근) 으로 쓰기떄문에 
 
 평향성을 구할려면 외적을 사용한다.
+
+외적을 보기전에 내적의 한 예를 보자.
+
+![벡터 투영 ](https://github.com/rinechran/programLab/blob/master/Linearity/img/ProjectionVector.png)
+
+내적이란 어떤 벡터를 다른 벡터에 투영한 결과 벡터를 계산하는것이다.
+
+      A * B  = ||A||| * ||B|| * cosθ
+
+      = ||A||| * ||B|| * || Aproj || / || A||
+
+      = ||B|| * || Aproj ||
+
+그러므로 || Aproj || = A * B / ||B|| 가 성립된다
+
+### 외적
+
+외적에 내용이 많아 길어질거 같다.
+
+![벡터 외적 ](https://github.com/rinechran/programLab/blob/master/Linearity/img/outerProduct.png)
+
+이미지 출처 : http://j1w2k3.tistory.com/635
+
+외적이란 두 벡터를 가지고 새로운 벡터를 만드는 공식이다.
+
+이 새로운 벡터는 재미있는 특징은 새로운 벡터는 두 벡터에 전부 수직이라는 점이다.
+
+![벡터 외적 공식 ](https://github.com/rinechran/programLab/blob/master/Linearity/img/outerProductMath.png)
+
+![벡터 외적 공식 ](https://github.com/rinechran/programLab/blob/master/Linearity/img/outerProductMath2.png) 
+
+내적에 비교하면 Cos 에서 Sin으로 바뀌었고 * 가 아니라 cross형태가 되었다.
+
+[외적 계산법](http://j1w2k3.tistory.com/635)은 이쪽을 보는게 매우 정리가 잘되어 있다.
+
+외적에 관해 더 살펴볼것이 있다.
+
+V ![벡터 외적 공식 ](https://github.com/rinechran/programLab/blob/master/Linearity/img/outerProductMath2.png)  W = -(W ![벡터 외적 공식 ](https://github.com/rinechran/programLab/blob/master/Linearity/img/outerProductMath2.png)  V)
+
+바로 내적에 비해 교환법칙하고 다르다는점이다. 내적같은경우는 자연스럽게 교환법칙이 성립하지만 외적같은경우는 방향이 반대로 바뀌기 떄문이다.
+
+V ![좌표계](https://github.com/rinechran/programLab/blob/master/Linearity/img/coordinateSystem.png) 
+
+이떄 방향에 한번더 살펴볼 것이 DirectX라는 MS개발툴은 왼손좌표계를 사용한다. 이와달리 OpenGl은 오른손 좌표계를 사용한다.
+
+그결과 외적의 방향을 알려면 오른손 좌표계는 오른손으로 왼손 좌표계는 왼손을 사용해야한다.
+
+
+
+
+
+
 
 
 
