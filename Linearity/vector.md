@@ -113,9 +113,11 @@ v * w = Vx * Wx + Vy * + Wy ....
 
 외적을 보기전에 내적의 한 예를 보자.
 
-![벡터 투영 ](https://github.com/rinechran/programLab/blob/master/Linearity/img/ProjectionVector.png)
+![벡터 투영 ](https://github.com/rinechran/programLab/blob/master/Linearity/img/ProjectionVector.jpg)
 
-내적이란 어떤 벡터를 다른 벡터에 투영한 결과 벡터를 계산하는것이다.
+이미지 출처 " http://toymaker.tistory.com/entry/투영-벡터-Projection-Vector
+
+벡터를를 다른 벡터에 투영한 결과를 계산할떄 이용을 한다
 
       A * B  = ||A||| * ||B|| * cosθ
 
@@ -123,7 +125,9 @@ v * w = Vx * Wx + Vy * + Wy ....
 
       = ||B|| * || Aproj ||
 
-그러므로 || Aproj || = A * B / ||B|| 가 성립된다
+그러므로 || Aproj || = A * B / ||B|| 가 성립된다.
+
+벡터 투영은 충돌검사에서 자주 나온다고한다.
 
 ### 외적
 
