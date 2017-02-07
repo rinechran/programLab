@@ -50,12 +50,40 @@ A 와 B를 곱할려면 A의 열의 개수와 B의 행의 개수가 언제나 �
 
 행렬의 몇가지 연산 으로는 전치행렬과 역행렬이있다
 
-![ 전치행렬2 ](https://github.com/rinechran/programLab/blob/master/Linearity/img/matrixTanspose1.png)
-![ 전치행렬1 ](https://github.com/rinechran/programLab/blob/master/Linearity/img/matrixTanspose2.png)
+![ 전치행렬1](https://github.com/rinechran/programLab/blob/master/Linearity/img/matrixTanspose1.png)
+![ 전치행렬2 ](https://github.com/rinechran/programLab/blob/master/Linearity/img/matrixTanspose2.png)
 
 전치행렬이란 행렬의 각요소의 행과 열을 바꿔서 나온 행령이다.
 
 만약에 A와 전치행렬을 한 A가 같다면 대칭 행렬이라고 한다.
+
+좀 전치 행렬에 재미있는 관계가 있는데 
+
+![ 전치행렬3 ](https://github.com/rinechran/programLab/blob/master/Linearity/img/matrixTanspose3.png)
+
+이런 공식이 관계가 존재하다는 점이다.
+
+![ 전치행렬3 ](https://github.com/rinechran/programLab/blob/master/Linearity/img/matrixUnity.png)
+
+또한 곱셈에 대한 항등원 I 가 존재한다.
+
+항등 행렬은 주대각선분이 모두 1이고 나머지 성분이 전부 0인 행렬이다.
+
+![ 역행렬1 ](https://github.com/rinechran/programLab/blob/master/Linearity/img/martrixInverse1.png)
+
+항등 행렬하면 바로 등장하는 것은 바로 역행렬이다
+
+** 역행렬은 두 행렬이 서로 곱하는 순서랑 상관없이 항등 행렬이 산출된다면 그 정방 행렬은 서로에 대해 역행렬이라고 한다 **
+
+A의 역행렬을 다음과 ![ 역행렬2 ](https://github.com/rinechran/programLab/blob/master/Linearity/img/martrixInverse2.png) 표기하고 "A인벌스" 라고 읽는다.
+
+그치만 모든 행렬이 역행력을 가지는것이 아니다. 이런 행렬을 특이 행렬(singular matrix) 라고 부른다.
+
+마지막으로 이런 성질도있구나하고 넘어가자
+
+![ 역행렬3 ](https://github.com/rinechran/programLab/blob/master/Linearity/img/martrixInverse3.png) 
+
+
 
 
 
