@@ -84,6 +84,18 @@ A의 역행렬을 다음과 ![ 역행렬2 ](https://github.com/rinechran/program
 ![ 역행렬3 ](https://github.com/rinechran/programLab/blob/master/Linearity/img/martrixInverse3.png) 
 
 
+# 벡터와 행렬의 관계
+
+행렬이 게임에서 가장많이 쓰는이유중하나는 벡터와 행렬을 변환로 가능해서이다.
+
+예로 들어 벡터 v = {1,2,3} 가 있다는 가정하에 다음과 같이 행렬을 포현할수있다.
+
+![ 벡터 행렬변환 ](https://github.com/rinechran/programLab/blob/master/Linearity/img/vectorChange.png) 
+
+이 와 같이 하나의 열로 표현하는것은 열벡터라고 하고 행으로 표현하는건 행 벡터라고한다.
+
+수학 , OpenGL은 열벡터를 기준으로 하고 다이렉트X는 행벡터를 기준으로 삼는다.
+
 
 
 
