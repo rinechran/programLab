@@ -51,6 +51,7 @@ public:
 			tasks.emplace([task]() { (*task)(); });
 		}
 		condition.notify_one();
+		return res;
 	}
 	ThreadPool::~ThreadPool()
 	{
