@@ -41,14 +41,18 @@ call vundle#begin()
 
 
 Plugin 'VundleVim/Vundle.vim'
+
+" The following are examples of different formats supported.
+" Keep Plugin commands between vundle#begin/end.
+" plugin on GitHub repo
+Plugin 'tpope/vim-fugitive'
+" plugin from http://vim-scripts.org/vim/scripts.html
+Plugin 'L9'
+" Git plugin not hosted on GitHub
+Plugin 'git://git.wincent.com/command-t.git'
 Plugin 'The-NERD-tree'
 Plugin 'tpope/vim-fugitive'
-Plugin 'git://git.wincent.com/command-t.git'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'kien/ctrlp.vim'
-Plugin 'scrooloose/syntastic'
 Plugin 'taglist.vim'
-Plugin 'snipMate'
 Plugin 'Valloric/YouCompleteMe'
 
 call vundle#end()            " required
