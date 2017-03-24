@@ -1,6 +1,10 @@
 
 nmap <F7> :NERDTree<CR>
 nmap <F8> :TlistToggle<CR>
+"brew install macvim --with-override-system-vim
+
+let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
+let g:ycm_confirm_extra_conf = 0 
 
 filetype off                  " required
 syntax on
