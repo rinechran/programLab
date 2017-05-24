@@ -3,41 +3,42 @@
 #include <Windows.h>
 #include <iostream>
 #include <string>
+#include <codecvt>
 
 using namespace std::string_literals;
 
 namespace KUDE {
-	class Dllmanager {
-		using WinFuncAddr = WINBASEAPI FARPROC WINAPI;
+	class DllManager {
+		//using WinFuncAddr = ;
 	public:
-		Dllmanager();
+		DllManager();
 
-		template <class T>
-		void loadDll(T && filePath);
+		void loadDll(std::string &  filePath);
 		void FreeDll();
-		template <class T>
-		WinFuncAddr getProcAddress(T && functionName);
-		~Dllmanager();
+
+		void* getProcAddress(std::string &  functionName);
+
+
+		~DllManager();
 	private:
 		HINSTANCE mHistance;
+
 	};
 
-}
+};
 
-template<class T>
-void KUDE::Dllmanager::loadDll(T && filePath) {
-	mHistance = LoadLibrary(filePath.c_str());
-}
-template<class T>
-WinFuncAddr KUDE::Dllmanager::getProcAddress(T && functionName) {
-	if (mHistance) return GetProcAddress(mHistance, functionName);
+void* KUDE::DllManager::getProcAddress(std::string &  functionName) {
+	if (mHistance)  return GetProcAddress(mHistance, functionName.c_str());
 	return nullptr;
+}
+KUDE::DllManager::DllManager() : mHistance(nullptr) {}
 
+void KUDE::DllManager::loadDll(std::string & filePath) {
+
+	mHistance = LoadLibraryA(filePath.c_str());
 }
 
-KUDE::Dllmanager::Dllmanager() : mHistance(nullptr) {}
-
-void KUDE::Dllmanager::FreeDll() {
+void KUDE::DllManager::FreeDll() {
 	if (mHistance == nullptr) {
 		return;
 	}
@@ -45,7 +46,7 @@ void KUDE::Dllmanager::FreeDll() {
 	mHistance = nullptr;
 }
 
-KUDE::Dllmanager::~Dllmanager() {
+KUDE::DllManager::~DllManager() {
 	if (mHistance) // not null
 		FreeLibrary(mHistance);
 
