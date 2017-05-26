@@ -31,6 +31,22 @@ class BBB : public Sington<BBB> {
 public:
 	int a;
 };
+
+template <typename T>
+class Singleton {
+private:
+    Singleton() = default;
+public:
+    ~Singleton() = default;
+    
+    
+    static T& getInstance() {
+        static T object;
+        return object;
+    }
+    
+};
+
 int main() {
 	AAA * a = AAA::get();
 	AAA * b = AAA::get();
