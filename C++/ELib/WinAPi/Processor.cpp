@@ -24,7 +24,8 @@ namespace KUDE {
 				process.push_back({pe.szExeFile,pe.th32ProcessID});
 
 			} while (Process32Next(handle,&pe));
-			
+			CloseHandle(handle);
+
 			return process;
 		}
 
