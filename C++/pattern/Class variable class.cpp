@@ -1,3 +1,5 @@
+#define _CRT_SECURE_NO_WARNINGS
+
 #include <iostream>
 #include <Windows.h>
 
@@ -8,11 +10,13 @@ public:
 };
 
 int main() {
-	
-	char * str = "my name ....";
-	CVSPerson * pCvsPerson = new CVSPerson[strlen(str) + sizeof(pCvsPerson)];
-	strcat(pCvsPerson->m_Name, str);
-	std::cout << pCvsPerson->m_Name;
-		
-}
 
+	char str[] = "my name ....";
+
+	CVSPerson* pCvsPerson = new CVSPerson[strlen(str) + 1];
+	strcpy(pCvsPerson->m_Name, str);
+	std::cout << pCvsPerson[0].m_Name;
+
+	delete []pCvsPerson;
+
+}
