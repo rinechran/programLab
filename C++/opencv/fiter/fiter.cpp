@@ -19,9 +19,9 @@ int display_dst(int delay)
 	if (c >= 0) { return -1; }
 	return 0;
 }
-int display_caption(char *caption) {
+int display_caption(char* caption) {
 	dst = Mat::zeros(src.size(), src.type());
-	putText(dst,caption,Point(src.cols/4,src.rows/2),
+	putText(dst, caption, Point(src.cols / 4, src.rows / 2),
 		FONT_HERSHEY_COMPLEX, 1, Scalar(255, 255, 255));
 	imshow(window_name, dst);
 	int c = waitKey(1500);
@@ -32,11 +32,11 @@ int main() {
 	namedWindow(window_name, WINDOW_AUTOSIZE);
 	cvNamedWindow(window_name, WINDOW_AUTOSIZE);
 	src = imread("test.jpg", IMREAD_COLOR);
-	if (display_caption("Orignal image")!= 0) return 0;
+	if (display_caption("Orignal image") != 0) return 0;
 
 	for (int i = 1; i < MAX_KERNEL_LENGTH; i = i + 2)
 	{
-		blur(src, dst, Size(i, i), Point(-1,-1));
+		blur(src, dst, Size(i, i), Point(-1, -1));
 		display_dst(DELAY_BLUR);
 	}
 	for (int i = 1; i < MAX_KERNEL_LENGTH; i = i + 2)
@@ -57,12 +57,12 @@ int main() {
 //blur GaussianBlur  medianBlur bilateralFilter
 
 /*
-°¡¿ì½Ã¾È ÇÊÅÍ:
-- ÀâÀ½(Gaussian noise)¸¦ Á¦°ÅÇÏ±â À§ÇÑ ÀúÁÖÆÄ ÇÊÅÍ (Low-pass filter)
-- ÀÓÆÞ½º ÀâÀ½(0, 255)À» Á¦°ÅÇÏ´Âµ¥ ºÎÀûÇÕ
+ê°€ìš°ì‹œì•ˆ í•„í„°:
+- ìž¡ìŒ(Gaussian noise)ë¥¼ ì œê±°í•˜ê¸° ìœ„í•œ ì €ì£¼íŒŒ í•„í„° (Low-pass filter)
+- ìž„íŽ„ìŠ¤ ìž¡ìŒ(0, 255)ì„ ì œê±°í•˜ëŠ”ë° ë¶€ì í•©
 
-¹Ìµð¾ð ÇÊÅÍ:
-- °­ÇÑ ¿§Áö¸¦ º¸Á¸ÇÏ°í ±âÁ¸ÀÇ ¿§ÁöµéÀ» Á»´õ »ó¼¼ÇÏ°Ô º¸Á¸
-- ¸Å¿ì ¶Ñ·ÇÇÑ ¹à±â¸¦ °¡Áø Á¡µéÀÌ ÀÌ¿ôÇÑ È­¼Òµé°ú À¯»çÇÏµµ·Ï ¸¸µé¾î µ¹ÃâµÇ´Â È­¼Ò°ªÀ» Á¦°Å
-ÃâÃ³  :http://forum.falinux.com/zbxe/index.php?document_srl=549330&mid=lecture_tip
+ë¯¸ë””ì–¸ í•„í„°:
+- ê°•í•œ ì—£ì§€ë¥¼ ë³´ì¡´í•˜ê³  ê¸°ì¡´ì˜ ì—£ì§€ë“¤ì„ ì¢€ë” ìƒì„¸í•˜ê²Œ ë³´ì¡´
+- ë§¤ìš° ëšœë ·í•œ ë°ê¸°ë¥¼ ê°€ì§„ ì ë“¤ì´ ì´ì›ƒí•œ í™”ì†Œë“¤ê³¼ ìœ ì‚¬í•˜ë„ë¡ ë§Œë“¤ì–´ ëŒì¶œë˜ëŠ” í™”ì†Œê°’ì„ ì œê±°
+ì¶œì²˜  :http://forum.falinux.com/zbxe/index.php?document_srl=549330&mid=lecture_tip
 */
